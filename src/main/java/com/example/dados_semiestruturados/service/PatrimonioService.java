@@ -28,7 +28,7 @@ public class PatrimonioService {
     @Autowired
     private CampusRepositoty campusRepository;
 
-    public void importarCsv() {
+    public void importarCsv(String campusPadrao) {
         try (
                 InputStream is = getClass().getClassLoader().getResourceAsStream("patrimonio-2019.csv");
                 InputStreamReader isr = new InputStreamReader(is);
@@ -44,8 +44,8 @@ public class PatrimonioService {
                 }
 
                 try {
-                    PatrimonioDto dto = TratamentoDeDados.tratarDados(linha);
-                    if (dto != null && "CAMPUS CAMPINA GRANDE".equalsIgnoreCase(dto.getCampus())) {
+                    PatrimonioDto dto = TratamentoDeDados.tratarDados(linha, campusPadrao);
+                    if (dto != null && dto.getCampus().equalsIgnoreCase(campusPadrao)) {
                         Patrimonio patrimonio = converterDtoParaEntidade(dto);
                         patrimonioRepository.save(patrimonio);
                     }

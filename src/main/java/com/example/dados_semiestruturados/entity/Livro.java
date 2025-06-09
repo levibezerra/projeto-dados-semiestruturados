@@ -1,7 +1,10 @@
 package com.example.dados_semiestruturados.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
@@ -11,9 +14,12 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 
 @Entity
-public class Patrimonio {
+public class Livro {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(name = "numero")
     private String numero;
 
@@ -33,6 +39,5 @@ public class Patrimonio {
     private BigDecimal valorLiquidoContabil;
 
     @ManyToOne
-    @JoinColumn(name = "campus_id")
     private Campus campus;
 }

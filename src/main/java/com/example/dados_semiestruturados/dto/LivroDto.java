@@ -10,8 +10,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class PatrimonioDto {
+public class LivroDto {
 
+    private Long id;
     private String numero;
     private String descricao;
     private String situacao;

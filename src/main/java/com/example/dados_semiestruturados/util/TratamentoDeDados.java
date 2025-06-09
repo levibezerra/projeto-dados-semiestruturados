@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class TratamentoDeDados {
 
-    public static PatrimonioDto tratarDados(String[] campos) {
+    public static PatrimonioDto tratarDados(String[] campos, String campusPadrao) {
         try {
             String numero = campos[0].trim();
             String descricao = campos[1].trim();
