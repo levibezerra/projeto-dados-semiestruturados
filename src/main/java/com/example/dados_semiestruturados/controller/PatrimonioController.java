@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -28,6 +29,17 @@ public class PatrimonioController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Erro ao importar dados do campus '" + campus + "': " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/valor-liquido-total")
+    public ResponseEntity<String> calcularValorLiquidoTotal(@RequestParam String campus) {
+        try {
+            BigDecimal total = patrimonioService.calcularValorTotalLiquidoPorCampus(campus.toUpperCase().trim());
+            return ResponseEntity.ok("Valor líquido contábil total do campus '" + campus + "': R$ " + total);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Erro ao calcular o valor líquido contábil: " + e.getMessage());
         }
     }
 }

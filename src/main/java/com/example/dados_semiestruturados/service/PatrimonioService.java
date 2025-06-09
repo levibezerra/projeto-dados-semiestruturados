@@ -79,4 +79,11 @@ public class PatrimonioService {
 
         return patrimonio;
     }
+
+    public BigDecimal calcularValorTotalLiquidoPorCampus(String nomeCampus) {
+        return patrimonioRepository.findAll().stream()
+                .filter(p -> p.getCampus() != null && p.getCampus().getNome().equalsIgnoreCase(nomeCampus))
+                .map(Patrimonio::getValorLiquidoContabil)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
 }
