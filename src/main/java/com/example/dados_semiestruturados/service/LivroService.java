@@ -24,8 +24,8 @@ public class LivroService {
         List<String> palavrasChave = List.of(
                 "LIVRO", "EDITORA", "ENGENHARIA", "PETRÓLEO", "GERENCIAMENTO",
                 "INDÚSTRIA", "PRODUÇÃO", "INTRODUÇÃO", "SISTEMAS", "PROJETO",
-                "PRÁTICA", "APRENDIZAGEM", "PEDAGOGIA", "COMPETÊNCIAS", "SINAIS", "LÍNGUA", "METODOS", "ELETRONICA",
-                "ALGEBRA"
+                "PRÁTICA", "APRENDIZAGEM", "PEDAGOGIA", "COMPETÊNCIAS", "SINAIS", "LÍNGUA", "METODOS", "ELETRONICA DIGITAL",
+                "ALGEBRA", "ISBN"
         );
 
         List<Patrimonio> livrosPatrimonios = patrimonioRepository.findAll().stream()
