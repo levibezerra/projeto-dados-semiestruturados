@@ -19,7 +19,7 @@ public class LivroController {
     @GetMapping("/separar")
     public ResponseEntity<String> separarLivros() {
         try {
-            livroService.separarLivrosDaTabelaPatrimonio();
+            livroService.livroDoCampus();
             return ResponseEntity.ok("Livros separados e salvos na tabela 'livro' com sucesso.");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

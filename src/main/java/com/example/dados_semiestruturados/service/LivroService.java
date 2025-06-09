@@ -20,11 +20,12 @@ public class LivroService {
     @Autowired
     private LivroRepository livroRepository;
 
-    public void separarLivrosDaTabelaPatrimonio() {
+    public void livroDoCampus() {
         List<String> palavrasChave = List.of(
                 "LIVRO", "EDITORA", "ENGENHARIA", "PETRÓLEO", "GERENCIAMENTO",
                 "INDÚSTRIA", "PRODUÇÃO", "INTRODUÇÃO", "SISTEMAS", "PROJETO",
-                "PRÁTICA", "APRENDIZAGEM", "PEDAGOGIA", "COMPETÊNCIAS", "SINAIS", "LÍNGUA"
+                "PRÁTICA", "APRENDIZAGEM", "PEDAGOGIA", "COMPETÊNCIAS", "SINAIS", "LÍNGUA", "METODOS", "ELETRONICA",
+                "ALGEBRA"
         );
 
         List<Patrimonio> livrosPatrimonios = patrimonioRepository.findAll().stream()
