@@ -1,6 +1,6 @@
 package com.example.dados_semiestruturados.controller;
 
-import com.example.dados_semiestruturados.service.MobiliaService;
+import com.example.dados_semiestruturados.service.EquipamentoTecnicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,20 +9,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/mobilia")
-public class MobiliaController {
+@RequestMapping("/api/tecnico")
+public class EquipamentoTecnicoController {
 
     @Autowired
-    private MobiliaService mobiliaService;
+    private EquipamentoTecnicoService equipamentoTecnicoService;
 
     @GetMapping("/separar")
-    public ResponseEntity<String> separarMobilia() {
+    public ResponseEntity<String> separarEquipamentoTecnico() {
         try {
-            mobiliaService.mobiliaDoCampus();
-            return ResponseEntity.ok("Mobilia separada e salva na tabela 'mobilia' com sucesso.");
+            equipamentoTecnicoService.equipamentoTecnicoDoCampus();
+            return ResponseEntity.ok("Equipamentos Tecnicos separados e salvos na tabela 'equipamentos_tecnico' com sucesso.");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Erro ao separar a mobilia: " + e.getMessage());
+                    .body("Erro ao separar os Equipamentos Tecnicos: " + e.getMessage());
         }
     }
 }

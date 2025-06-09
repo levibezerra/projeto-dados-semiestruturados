@@ -17,7 +17,7 @@ public class EquipamentoDeInformaticaController {
     private EquipamentoDeInformaticaService informaticaService;
 
     @GetMapping("/separar")
-    public ResponseEntity<String> separarLivros() {
+    public ResponseEntity<String> separarEquipamentosDeInformatica() {
         try {
             informaticaService.equipamentoDeInformaticaDoCampus();
             return ResponseEntity.ok("Equipamentos de Informatica separados e salvos na tabela 'equipamentos_de_informatica' com sucesso.");
