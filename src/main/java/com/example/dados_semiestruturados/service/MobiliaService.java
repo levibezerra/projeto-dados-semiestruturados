@@ -21,7 +21,7 @@ public class MobiliaService {
 
     public void mobiliaDoCampus() {
         List<String> palavrasChave = List.of(
-                "CADEIRA", "ARMARIO", "MESA", "BANQUET", "RACK"
+                "CADEIRA", "ARMARIO", "MESA", "BANQUET", "RACK", "POLTRONA"
         );
 
         List<Patrimonio> mobiliaPatrimonios = patrimonioRepository.findAll().stream()

@@ -17,8 +17,4 @@ public class Campus {
 
     @Column(name = "nome")
     private String nome;
-
-    public Long getId() {
-        return id;
-    }
 }

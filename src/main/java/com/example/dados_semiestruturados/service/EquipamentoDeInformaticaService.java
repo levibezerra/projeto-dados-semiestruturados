@@ -21,7 +21,7 @@ public class EquipamentoDeInformaticaService {
 
     public void equipamentoDeInformaticaDoCampus() {
         List<String> palavrasChave = List.of(
-                "MICROMPUTADOR", "SAMSUNG", "NOTEBOOK", "MONITOR"
+                "MICROCOMPUTADOR", "SAMSUNG", "NOTEBOOK", "MONITOR"
         );
 
         List<Patrimonio> equipamentoDeinfoPatrimonios = patrimonioRepository.findAll().stream()
